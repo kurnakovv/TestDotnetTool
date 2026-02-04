@@ -1,0 +1,63 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFrameworks>net6.0;net8.0</TargetFrameworks>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+
+		<PackAsTool>true</PackAsTool>
+		<ToolCommandName>test-dotnet-tool</ToolCommandName>
+		
+		<NoWarn>NETSDK1138</NoWarn>
+
+		<EnablePackageValidation>true</EnablePackageValidation>
+		<PackageId>kurnakovv.TestDotnetTool</PackageId>
+		<Authors>kurnakovv</Authors>
+		<Company>kurnakovv</Company>
+		<Product>kurnakovv.TestDotnetTool</Product>
+		<Description>Test desc</Description>
+		<RepositoryUrl>https://github.com/kurnakovv/TestDotnetTool</RepositoryUrl>
+		<PackageTags>csharp;dotnet</PackageTags>
+		<NeutralLanguage>en</NeutralLanguage>
+		<AssemblyName>kurnakovv.TestDotnetTool</AssemblyName>
+		<EnablePackageValidation>true</EnablePackageValidation>
+		<PackageProjectUrl>https://github.com/kurnakovv/TestDotnetTool</PackageProjectUrl>
+		<Title>kurnakovv.TestDotnetTool</Title>
+		<PackageIcon>icon.png</PackageIcon>
+		<PackageReadmeFile>ReadMeNuGet.md</PackageReadmeFile>
+		<RepositoryType>git</RepositoryType>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Include="..\icon.png">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	  <None Include="..\LICENSE">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="DotNet.ReproducibleBuilds" Version="2.0.2">
+	    <PrivateAssets>all</PrivateAssets>
+	    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	  </PackageReference>
+	  <PackageReference Include="MinVer" Version="7.0.0">
+	    <PrivateAssets>all</PrivateAssets>
+	    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	  </PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="ReadMeNuGet.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	</ItemGroup>
+
+</Project>

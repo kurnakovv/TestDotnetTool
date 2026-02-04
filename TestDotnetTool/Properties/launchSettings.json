@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "TestDotnetTool": {
+      "commandName": "Project",
+      "commandLineArgs": "--args Test"
+    }
+  }
+}
