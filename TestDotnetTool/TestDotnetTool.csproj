@@ -54,7 +54,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Update="ReadMeNuGet.md">
+	  <None Update="..\ReadMeNuGet.md">
 	    <Pack>True</Pack>
 	    <PackagePath>\</PackagePath>
 	  </None>
