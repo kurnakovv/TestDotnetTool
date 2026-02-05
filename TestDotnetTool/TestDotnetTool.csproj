@@ -25,10 +25,10 @@
 		<PackageProjectUrl>https://github.com/kurnakovv/TestDotnetTool</PackageProjectUrl>
 		<Title>kurnakovv.TestDotnetTool</Title>
 		<PackageIcon>icon.png</PackageIcon>
-		<PackageReadmeFile>ReadMeNuGet.md</PackageReadmeFile>
 		<RepositoryType>git</RepositoryType>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+		<PackageReadmeFile>ReadMeNuGet.md</PackageReadmeFile>
 	</PropertyGroup>
 
 	<ItemGroup>
