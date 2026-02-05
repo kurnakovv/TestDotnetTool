@@ -21,7 +21,6 @@
 		<PackageTags>csharp;dotnet</PackageTags>
 		<NeutralLanguage>en</NeutralLanguage>
 		<AssemblyName>kurnakovv.TestDotnetTool</AssemblyName>
-		<EnablePackageValidation>true</EnablePackageValidation>
 		<PackageProjectUrl>https://github.com/kurnakovv/TestDotnetTool</PackageProjectUrl>
 		<Title>kurnakovv.TestDotnetTool</Title>
 		<PackageIcon>icon.png</PackageIcon>
@@ -54,7 +53,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Update="..\ReadMeNuGet.md">
+	  <None Update="ReadMeNuGet.md">
 	    <Pack>True</Pack>
 	    <PackagePath>\</PackagePath>
 	  </None>
