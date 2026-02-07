@@ -6,10 +6,10 @@ namespace TestDotnetTool.Tests;
 public class EditorConfigTests
 {
     static string ToolProjectPath =>
-    typeof(EditorConfigTests).Assembly
-        .GetCustomAttributes<AssemblyMetadataAttribute>()
-        .Single(x => x.Key == "ToolProjectPath")
-        .Value!;
+        typeof(EditorConfigTests).Assembly
+            .GetCustomAttributes<AssemblyMetadataAttribute>()
+            .Single(x => x.Key == "ToolProjectPath")
+            .Value!;
 
     [Fact]
     public async Task App_Processes_EditorConfig_From_Test_Folder()
@@ -17,7 +17,7 @@ public class EditorConfigTests
         // Arrange
         var testDir = new TestDirectory(nameof(App_Processes_EditorConfig_From_Test_Folder));
 
-        var template = System.IO.Path.Combine(
+        var template = Path.Combine(
             AppContext.BaseDirectory,
             "Templates",
             ".editorconfig"
@@ -25,7 +25,7 @@ public class EditorConfigTests
 
         testDir.CopyFromTemplate(template);
 
-        var appPath = System.IO.Path.Combine(
+        var appPath = Path.Combine(
             AppContext.BaseDirectory,
             "kurnakovv.TestDotnetTool.dll"
         );
@@ -34,7 +34,12 @@ public class EditorConfigTests
         var dllPath = Path.Combine(
             Path.GetDirectoryName(toolProjectPath)!,
             "bin",
+#if DEBUG
             "Debug",
+#endif
+#if RELEASE
+            "Release",
+#endif
             "net8.0",
             "kurnakovv.TestDotnetTool.dll"
         );
@@ -42,11 +47,11 @@ public class EditorConfigTests
         var psi = new ProcessStartInfo
         {
             FileName = "dotnet",
-            Arguments = $"\"{dllPath}\"",
+            Arguments = $"\"{dllPath}\" setup",
             WorkingDirectory = testDir.Path,
             RedirectStandardOutput = true,
             RedirectStandardError = true,
-            UseShellExecute = false
+            UseShellExecute = false,
         };
 
         // Act
@@ -55,6 +60,6 @@ public class EditorConfigTests
         await process.WaitForExitAsync();
 
         Assert.Equal(0, process.ExitCode);
-        Assert.Contains("editorconfig processed", output);
+        Assert.Contains("Hello from kurnakovv", output);
     }
 }

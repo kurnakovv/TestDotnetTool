@@ -2,12 +2,12 @@
 
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
-		<TargetFrameworks>net6.0;net8.0</TargetFrameworks>
+		<TargetFrameworks>net8.0;net6.0</TargetFrameworks>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 
 		<PackAsTool>true</PackAsTool>
-		<ToolCommandName>test-dotnet-tool</ToolCommandName>
+		<ToolCommandName>dotnet-test-dotnet-tool</ToolCommandName>
 		
 		<NoWarn>NETSDK1138</NoWarn>
 
